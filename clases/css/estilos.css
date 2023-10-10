@@ -1,0 +1,57 @@
+body{
+    background-color: rgba(137, 43, 226, 0.671);
+}
+/* img{
+    width: 150px;
+} */
+.card{
+    height: 440px;
+}
+input {
+    margin: 10px 0px;
+}
+#root{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 15px 0px;
+    min-height: 550px;
+}
+.img{
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+ul{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+li{
+    background-color: black;
+    color: white;
+    padding: 15px;
+    cursor: pointer;
+    
+}
+.list-group-item{
+    width: 1000px;
+    display: flex;
+    justify-content: space-around;
+    /* text-align: center; */
+}
+span{
+  
+    display: block;
+    width: 300px;
+}
+.eliminar{
+    padding: 2px;
+    background-color: red;
+    color: white;
+}
