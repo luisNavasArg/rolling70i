@@ -159,8 +159,8 @@ function imprimirProducto(array) {
 imprimirProducto(productos);
 /*Create, Read, Update y Delete */
 function addProduct(i,id) {
-
-    let producto= {
+/* palabra reservada operador de asignación, cuerpo{par Clave:Valor,clave2:valor2}  */
+    let producto    = {
         id:i,
         cantidad:Number(document.getElementById(id).value),
         precio:productos[i].precio,
@@ -169,6 +169,7 @@ function addProduct(i,id) {
     carrito.push(producto);
     
 }
+
 let carrito=[
 ];
 
