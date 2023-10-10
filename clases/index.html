@@ -8,17 +8,14 @@
     <link rel="stylesheet" href="./css/estilos.css">
 </head>
 <body>
-    <section>
-        <ul>
-            <li >inicio</li>
-           
-        </ul>
-    </section>
+    <header >
+        <h2>Sistema de reservas</h2>
+    </header>
     <div class="formulario">
         <form id="formulario" >
             <input id="pasajeros" type="number" placeholder="Cantidad de pasajeros"/>
             <div class="salida">
-                <h3>Salida</h3>
+                <h4>Salida</h4>
                 <select id="EstacionInical">
                     <option value="1">Buenos Aires</option>
                     <option value="2">Zarate</option>
@@ -32,7 +29,7 @@
                 </select>
             </div>
             <div class="destino">
-                <h3>Llegada</h3>
+                <h4>Llegada</h4>
                 <select id="EstacionFinal">
                     <option value="1">Buenos Aires</option>
                     <option value="2">Zarate</option>
@@ -46,7 +43,7 @@
                 </select>
             </div>
             
-            <input type="button" onclick="crearReserva()" value="Reservar Viaje">
+            <input id="btn" type="button" onclick="crearReserva()" value="Reservar Viaje">
         </form>
     </div>
     <div id="root">
