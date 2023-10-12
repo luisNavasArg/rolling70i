@@ -109,18 +109,96 @@ const productos=[
         color:"Rosa",
         velocidades:2,
     url:"https://canaglia.com/wp-content/uploads/2021/02/Bicicleta-Roller-Lady-Beach-TurquesaGris-600x600.jpg"
+},
+{
+    nombre:"Bicicleta ring 29",
+    precio:250000,
+    color:"Negro y Rojo",
+    velocidades:6,
+    url:"https://actitudsports.com.ar/wp-content/uploads/2022/01/shift2.jpg"
+},{
+nombre:"Bicicleta Roller Lady",
+    precio:280000,
+    color:"Rosa",
+    velocidades:2,
+url:"https://canaglia.com/wp-content/uploads/2021/02/Bicicleta-Roller-Lady-Beach-TurquesaGris-600x600.jpg"
+},
+{
+    nombre:"Bicicleta ring 29",
+    precio:250000,
+    color:"Negro y Rojo",
+    velocidades:6,
+    url:"https://actitudsports.com.ar/wp-content/uploads/2022/01/shift2.jpg"
+},{
+nombre:"Bicicleta Roller Lady",
+    precio:280000,
+    color:"Rosa",
+    velocidades:2,
+url:"https://canaglia.com/wp-content/uploads/2021/02/Bicicleta-Roller-Lady-Beach-TurquesaGris-600x600.jpg"
 }
 ];
 
 function imprimirProducto(array) {
     let elemnt = document.getElementById("root");
     elemnt.innerHTML=""
-    array.map((producto)=>{
+    array.map((producto,index)=>{
        
         elemnt.innerHTML+=`
-    <img src=${producto.url}>
+        <div class="card" style="width: 18rem;">
+  <div class="img"><img src="${producto.url}" class="card-img-top" alt="..."></div>
+  <div class="card-body">
+    <h5 class="card-title">${producto.nombre}</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <input class="input" type="number" id="cantidad${index}" placeholder="Agrega la cantidad">
+    <a href="#" class="btn btn-primary" onclick="addProduct('${index}','cantidad${index}')">Agregar al carrito</a>
+  </div>
+</div>
     `
     })
 }
 imprimirProducto(productos);
 /*Create, Read, Update y Delete */
+function addProduct(i,id) {
+
+    let producto= {
+        id:i,
+        cantidad:Number(document.getElementById(id).value),
+        precio:productos[i].precio,
+        nombre:productos[i].nombre
+    }
+    carrito.push(producto);
+    
+}
+let carrito=[
+];
+
+function mostrarCompra(){
+    let elementos = ``;
+    const lista=carrito.map((item)=>{
+        elementos+=`<li class="list-group-item">
+        <span> ${item.nombre}</span> <span> ${item.cantidad}</span><span> ${item.precio}</span><span onclick="deleteItem(${item.id})" class="eliminar">X</span>
+        </li>`
+    })
+    console.log(elementos);
+    elemento.innerHTML=`
+    <ul class="list-group list-group-flush">
+    <li class="list-group-item"> <span>Nombre: </span> <span>cantidad: </span><span> precio:</span><span >Eliminar</span></li>
+${elementos}
+</ul>
+    `
+}
+
+function deleteItem(pos) {
+    let nuevoArray = carrito.filter((p)=>{
+        
+        if (carrito[pos].id !== p.id) {
+          return(p)  
+        }
+    })
+    carrito=nuevoArray;
+    mostrarCompra();
+}
+
+
+
+

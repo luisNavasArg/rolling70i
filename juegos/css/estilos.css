@@ -1,0 +1,20 @@
+.tablero{
+    width: 900px;
+    height: 900px;
+    background-color: black;
+    display: flex;
+    flex-wrap: wrap;
+}
+.cuadro{
+    width: 250px;
+    height: 250px;
+    margin:25px ;
+    background-color: rgb(179, 152, 152);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+span{
+    font-size: 80px;
+}
