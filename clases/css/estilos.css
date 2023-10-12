@@ -2,6 +2,7 @@ body{
     background-color: rgba(137, 43, 226, 0.671);
     padding: 0px 300px;
 }
+
 /* img{
     width: 150px;
 } */
@@ -95,4 +96,28 @@ h2{
     border-radius: 5px 0px;
     padding: 5px;
     box-shadow: 5px 5px 8px black;
+}
+th, td{
+    width: 150px;
+    text-align: center;
+    border-top:1px solid black;
+}
+@media (max-width:821px) {
+    body{
+        padding: 20px;
+    }
+}
+
+@media (max-width:420px) {
+    body{
+        background-color: blue;
+        padding: 10px;
+    }
+}
+.cerrado{
+    background-color: rgba(2, 219, 2, 0.58);
+}
+.abierta{
+    background-color: red;
+    color: white;
 }
