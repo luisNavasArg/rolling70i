@@ -1,15 +1,19 @@
+body{
+    display: flex;
+    justify-content: center;
+}
 .tablero{
-    width: 900px;
-    height: 900px;
-    background-color: black;
+    width: 600px;
+    height: 600px;
+    background-color: rgb(229, 214, 214);
     display: flex;
     flex-wrap: wrap;
 }
 .cuadro{
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
     margin:25px ;
-    background-color: rgb(179, 152, 152);
+    background-color: rgb(218, 127, 218);
     text-align: center;
     display: flex;
     justify-content: center;
