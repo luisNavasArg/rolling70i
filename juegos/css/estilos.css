@@ -22,3 +22,22 @@ body{
 span{
     font-size: 80px;
 }
+.msg{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(blue,violet,black);
+    color: white;
+    font-size: 150px;
+    cursor: pointer;
+}
+button{
+    background-color: black;
+    padding: 15px;
+    border-radius: 0px 10px;
+    color:white;
+    cursor: pointer;
+}
