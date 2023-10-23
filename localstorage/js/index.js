@@ -15,26 +15,3 @@ document.querySelector("#root").innerHTML=`
     </div>
 </form>
 `
-let formulario =document.querySelector("form");
-let mensaje =document.querySelector("span");
-mensaje.style.color="red";
-mensaje.style.backgroundColor="black";
-mensaje.style.padding="10px";
-mensaje.style.display="none";
-
-formulario.addEventListener('submit',function(event){
-    event.preventDefault();
-    let email=event.target[0].value;
-    let password= event.target[1].value;
-    if(email=="" || password==""){
-      mensaje.innerText="Los campos son obligatorios";
-      mensaje.style.display="block";
-      setTimeout(()=>{
-        mensaje.innerText="";
-        mensaje.style.display="none";
-      },3000)
-    }else{
-        this.submit()
-    }
-})
-
