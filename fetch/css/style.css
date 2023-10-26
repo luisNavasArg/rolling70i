@@ -1,0 +1,794 @@
+.body {
+    background-color: #1e2425;
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+
+.logo {
+    padding-left: 20px;
+    padding-top: 10px;
+    width: 60px;
+    height: 60px;
+
+}
+
+.header {
+
+    margin-bottom: 10px;
+
+
+}
+
+
+.navbar {
+
+    display: flex;
+    align-items: flex-start;
+    background-color: #37465b;
+    border-radius: 5px;
+}
+
+
+.navlista {
+    height: 100px;
+    padding: 0px;
+    margin: 0px;
+    flex-direction: row;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textolista {
+
+    padding-left: 190px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+
+.linkhome {
+
+
+    text-decoration: none;
+
+
+}
+
+.main {
+
+    margin-top: 10px;
+
+}
+
+.cajapadre {
+
+    background-image: url(../img/1609408585_467254_1609408795_noticia_normal.jpg);
+    height: 410px;
+    width: 98, 5%;
+
+
+    border-radius: 5px;
+    border: solid 10px;
+    border-color: #37465b;
+
+}
+
+.textobanner {
+
+
+    color: rgb(255, 255, 255);
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+
+    font-size: 30px;
+    margin-top: 12%;
+    margin-left: 1%;
+}
+
+
+.seccionbanner1 {
+    background-image: url(../img/COMO-APRECIAR-LA-OBRA-CINEMATOGRAFICA-imagen-1000x480.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    width: 100%;
+    height: 500px;
+    border-radius: 5px;
+    border: solid 5px #37465b;
+
+    margin-bottom: 10px;
+    margin-top: 10px;
+
+}
+
+
+
+.valoradas {
+
+    background-color: #37465b;
+    width: 100%;
+    height: 500px;
+
+
+}
+
+
+
+.p-masvistas {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-top: 15px;
+}
+
+.p-masvistas1 {
+
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-top: 15px;
+
+
+}
+
+.contenedor {
+    display: flex;
+    height: 410px;
+    background-color: #37465b;
+
+
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+.contenedor2 {
+    display: flex;
+    height: 410px;
+    background-color: #37465b;
+
+
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+
+
+.caja {
+    padding-top: 0px;
+    flex: 1;
+    padding-bottom: 80px;
+    height: 380px;
+    background-color: #1e2425;
+    margin: 5px;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+.caja2 {
+    padding-top: 0px;
+    flex: 1;
+    padding-bottom: 80px;
+    height: 380px;
+    background-color: #1e2425;
+    margin: 5px;
+    padding: 10px 10px;
+    border-radius: 5px;
+}
+
+
+
+.pulp {
+
+
+    height: 360px;
+    width: 100%;
+    border-radius: 5px;
+
+}
+
+.titulopeli {
+
+    text-align: center;
+    margin-top: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    font-size: 15px;
+    font-weight: 800;
+    text-decoration: none;
+}
+
+
+.pdepaginalista {
+    color: white;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    border: 0px;
+    padding-top: 3%;
+}
+
+.footer {
+
+    margin-top: 10px;
+    background-color: #37465b;
+    height: 100px;
+    border-radius: 5px;
+}
+
+.nombrespdp {
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+}
+
+.p-masvistas {
+    color: white;
+    background-color: #37465b;
+    margin-bottom: 0px;
+
+}
+
+
+.main2 {
+    margin-top: 10px;
+    background-color: #37465b;
+    height: max-content;
+    width: 100%;
+
+}
+
+/* nuevas reglas detalle peliculas */
+
+.detalles-pelis {
+    display: flex;
+    height: max-content;
+}
+
+.imgfondo {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.textosdetalle {
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.detallestarwars {
+    width: 300px;
+    height: 400px;
+    border: 5px solid #ffff;
+}
+
+.imagendefondo {
+
+    height: 500px;
+    width: 95%;
+    margin-top: 20px;
+    margin-left: 30px;
+    border: 5px solid #1e2425;
+}
+
+
+.titulo_ {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.titulopeliculadetalle {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 800;
+    font-size: 30px;
+
+
+}
+
+.sinopsis {
+    margin-bottom: 10px;
+
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+
+}
+
+.fechaestreno {
+
+
+
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+
+}
+
+
+.valoracion {
+    margin-top: 10px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+
+}
+
+.genero {
+
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    margin-top: 5px;
+
+
+
+}
+
+.cienciaficcion {
+
+    background-color: #1e2425;
+    color: #ffff;
+    text-decoration: none;
+    border-radius: 12%;
+    border: #1e2425 solid 5px;
+
+}
+
+.favoritos {
+
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    list-style: none;
+
+}
+
+
+
+.bannergeneros {
+
+
+
+    margin-top: 20px;
+    border: #1e2425 solid 5px;
+    width: 95%;
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+
+}
+
+.textobannergeneros {
+
+
+    font-family: Arial, Helvetica, sans-serif;
+    margin-left: 20%;
+    margin-top: 15%;
+    color: #ffff;
+    font-size: 40px;
+}
+
+.listas-contenedor {
+
+    display: flex;
+    justify-content: center;
+    background-color: #37465b;
+    width: 100%;
+    height: 300px;
+    margin-top: 20px;
+
+}
+
+.listas-contenedor2 {
+
+    display: flex;
+    justify-content: center;
+    background-color: #37465b;
+    width: 100%;
+    height: 300px;
+
+    margin-top: 10px;
+
+
+}
+
+
+.lista {
+    padding-top: 20px;
+    list-style: none;
+    padding-right: 10px;
+
+}
+
+.lista3 {
+
+    padding-top: 20px;
+    list-style: none;
+    margin-right: 40px;
+}
+
+.itemgeneros {
+    background-color: #1e2425;
+    margin: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    padding-right: 100px;
+    color: white;
+    padding-left: 100px;
+    border-radius: 5px;
+    font-weight: 600;
+
+}
+
+
+
+.botonbuscar {
+
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: #1e2425;
+    color: #ffff;
+
+}
+
+.sectionheader2 {
+
+    padding-top: 30px;
+    padding-left: 200px;
+
+}
+
+.submitboton {
+
+    background-color: #1e2425;
+    color: #ffff;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+
+.maindetallesgeneros {
+
+
+    background-color: #37465b;
+    max-width: 100%;
+    height: 500px;
+    background-image: url(../img/pred-1685023530620.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: #37465b 5px solid;
+}
+
+
+.textoaccion {
+    margin-left: 5%;
+    margin-top: 15%;
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffff;
+    font-size: 30px;
+}
+
+.sectionpadrepelis {
+
+
+    margin-top: 10px;
+
+
+}
+
+
+
+.mainaccion {
+
+    margin-top: 10px;
+
+}
+
+.titulogeneros {
+
+    margin-top: 15px;
+    margin-left: 50px;
+    color: #ffff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.resultadosbusqueda {
+
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffff;
+    font-size: 40px;
+    background-color: rgba(0, 0, 0, 0.488);
+
+}
+
+.seccionbannergeneros {
+    background-image: url(../img/f.elconfidencial.com_original_4eb_a77_5f9_4eba775f9bbe9f2f8c602b8731e81a46.jpg);
+    background-repeat: no-repeat;
+
+    background-size: 100%;
+    width: 100%;
+    height: 550px;
+    margin-top: 20px;
+    border: solid 5px #37465b;
+    border-radius: 5px;
+}
+
+
+/* Responsive*/
+
+
+
+@media (max-width: 420px) {
+
+    .body {
+
+        padding-right: 2%;
+        padding-left: 2%;
+
+    }
+
+    .logo {
+        margin-top: 10px;
+        height: 50px;
+        width: 50px;
+
+
+
+    }
+
+    .detallestarwars {
+
+        width: 300px;
+        height: 400px;
+        border: 5px solid #ffff;
+
+    }
+
+    .navlista {
+
+        flex-direction: column;
+        margin-left: -35%;
+    }
+
+    .botonbuscar {
+
+        width: 100%;
+        height: 10px;
+
+    }
+
+    .cajapadre {
+
+
+        display: none;
+    }
+
+    .banner {
+
+        display: none;
+    }
+
+
+    .contenedor {
+
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        height: max-content;
+        margin-left: 35px;
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+
+    .caja2 {
+        border: #37465b solid 5px;
+        margin: 0px;
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #1e2425;
+
+    }
+
+
+
+    .p-masvistas {
+
+        text-align: center;
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+        width: 270px;
+        margin-left: 33px;
+
+    }
+
+    .sectionheader2 {
+
+        padding: 30px;
+
+    }
+
+    .imagendefondo {
+        display: none;
+
+    }
+
+
+
+    .seccionbanner1 {
+
+        background-image: none;
+        height: 35px;
+        background-color: #37465b;
+        width: 97%;
+    }
+
+    .textobannergeneros {
+
+        text-align: center;
+        margin-top: 0px;
+        margin-left: 10px;
+
+        font-size: 30px;
+
+    }
+
+    .seccionbannergeneros {
+
+        background-image: none;
+        height: 35px;
+        background-color: #37465b;
+        width: 97%;
+        margin-top: 10px;
+    }
+
+
+
+
+
+
+    .sinopsis {
+
+
+        color: white;
+        font-weight: 400;
+        font-size: 15px;
+        left: 4px;
+        margin-bottom: -2px;
+        width: 344px;
+    }
+
+
+    .fechaestreno {
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 400;
+        font-size: 15px;
+    }
+
+    .valoracion {
+        margin-top: 10px;
+    }
+
+    .genero {
+
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 600;
+        font-size: 15px;
+        left: 86px;
+    }
+
+    .bannergeneros {
+
+        margin-top: 20px;
+        border: #1e2425 solid 5px;
+        width: 95%;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+        display: none;
+    }
+
+    .resultadosbusqueda {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #ffff;
+        font-size: 40px;
+        background-color: rgba(0, 0, 0, 0.488);
+        left: 0%;
+    }
+
+    .contenedor2 {
+        display: flex;
+        flex-direction: column;
+
+        width: 80%;
+        height: 2140px;
+        margin-left: 35px;
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+
+    .caja {
+
+        height: 396px;
+        background-color: #1e2425;
+        margin: 5px;
+        padding: 10px 10px;
+        border-radius: 5px;
+    }
+
+    /* reglas de css para detalle peliculas */
+
+
+    .detalles-pelis {
+        flex-direction: column;
+    }
+
+    .imgfondo {
+        width: 100%;
+       
+    }
+
+    .textosdetalle {
+        width: 100%;
+    }
+
+
+
+    .listas-contenedor{
+
+        height: max-content;
+        flex-direction: column;
+
+
+
+    }
+
+    .listas-contenedor2{
+
+
+        height: max-content;
+        flex-direction: column;
+
+
+
+
+    }
+
+    .maindetallesgeneros{
+
+        background-image: none;
+        height: max-content;
+
+    }
+
+    .acciondetallesgeneros{
+display: flex;
+align-items: center;
+margin: 0%;
+justify-content: center;
+    }
+}
