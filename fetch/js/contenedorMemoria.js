@@ -2,12 +2,17 @@ class Crud {
     static id=1;
     constructor(my_var){
         this.my_var=my_var;
-        this.array=[];
+        this.array=JSON.parse(localStorage.getItem(this.my_var)) || [];
+
     }
     //create
     create(newObj){
         newObj.id=this.my_id();
         this.array=[...this.array,newObj];
+        arrayPeliculas=JSON.parse(localStorage.getItem(this.my_var)) || [];
+        arrayPeliculas=this.array;
+        localStorage.setItem(this.my_var,JSON.stringify(arrayPeliculas))
+        console.log(arrayPeliculas);
 
     }
     //Read
@@ -22,9 +27,23 @@ class Crud {
                 this.array[index]=newValue;
             }
         })
+        arrayPeliculas=JSON.parse(localStorage.getItem(this.my_var)) || [];
+        arrayPeliculas=this.array;
+        localStorage.setItem(this.my_var,JSON.stringify(arrayPeliculas))
+
     }
     //delete
-
+    delete(id){
+        let newData = this.array.filter((obj)=>{
+            if (id!=obj.id) {
+                return obj;
+            }
+        })
+        arrayPeliculas=JSON.parse(localStorage.getItem(this.my_var)) || [];
+        this.array=newData;
+        arrayPeliculas=this.array;
+        localStorage.setItem(this.my_var,JSON.stringify(arrayPeliculas))
+    }
     my_id(){
         return Crud.id++;
     }
@@ -41,7 +60,9 @@ class Crud {
     }
 
 }
+let arrayPeliculas=JSON.parse(localStorage.getItem(this.my_var)) || [];
 let usuarios = new Crud("usuarios");
 let misPeliculas = new Crud("misPeliculas");
+console.log(arrayPeliculas);
 
 

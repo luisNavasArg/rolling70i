@@ -63,7 +63,7 @@ function visualizar() {
     contenedor.innerHTML+=`
     <div class="caja2">
         <a href="./detalle.html?id=${pelicula.id}">
-            <img src="${pelicula.src}" class="pulp">
+            <img class="imgPeli" src="${pelicula.src}" class="pulp">
             <h3 class="titulopeli">${pelicula.title}</h3>
         </a>
     </div>

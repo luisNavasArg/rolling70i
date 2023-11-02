@@ -426,7 +426,9 @@
     list-style: none;
     margin-right: 40px;
 }
-
+img{
+    width: 150px !important;
+}
 .itemgeneros {
     background-color: #1e2425;
     margin: 20px;
@@ -755,7 +757,7 @@
         width: 100%;
        
     }
-
+   
     .textosdetalle {
         width: 100%;
     }

@@ -1,32 +1,52 @@
 let principal=document.querySelector("#principal");
+principal.innerHTML=mostrarPelis(misPeliculas.get());
 
-principal.innerHTML=`
-<form id="agregar">
-    <h3>Agregar Peli</h3>
-    <div class="input">
-        <input type="text" name="title" id="title" placeholder="Título">
-    </div>
-    <div class="input">
-        <input type="text" name="src" id="src" placeholder="src">
-    </div>
-    <div class="input">
-        <input id="btn" type="button" value="Agregar"  >
-    </div>
-    <div class="input">
-        <span></span>
-    </div>
-</form>
-`;
+function update(id) {
+    let pelis = misPeliculas.get();
+    let [obj] = pelis.filter(p=>{
+        if (p.id==id) {
+            return p;
+        }
+    });
+    // principal.innerHTML=modificarPeli(obj)
+    modificarPeli(obj)
+}
 
-document.querySelector("#btn").addEventListener('click',function () {
+
+function agregarPeli() {
+    return`
+    <form id="agregar">
+        <h3>Agregar Peli</h3>
+        <div class="input">
+            <input type="text" name="title" id="title" placeholder="Título">
+        </div>
+        <div class="input">
+            <input type="text" name="src" id="src" placeholder="src">
+        </div>
+        <div class="input">
+            <input id="btn" type="button" value="Agregar" onclick="add()">
+        </div>
+        <div class="input">
+            <span></span>
+        </div>
+    </form>
+    `;
+}
+function add() {
     let form = document.querySelector("#agregar");
-    misPeliculas.create({title:form[0].value,src:form[1].value})
-    console.log(misPeliculas.get());
-    localStorage.setItem("misPeliculas",JSON.stringify(misPeliculas.get()))
-})
-const modificarPeli=(id,obj)=>{
-    
-    return `<form id="editar">
+    let [title,src]=form;
+   
+    misPeliculas.create({title:title.value,src:src.value})
+}
+// document.querySelector("#btn").addEventListener('click',function () {
+//     let form = document.querySelector("#agregar");
+//     misPeliculas.create({title:form[0].value,src:form[1].value})
+//     console.log(misPeliculas.get());
+//     localStorage.setItem("misPeliculas",JSON.stringify(misPeliculas.get()))
+// })
+const modificarPeli=(obj)=>{
+    //
+    principal.innerHTML= `<form id="editar">
     <h3>Modificar Peli</h3>
     <div class="input">
         <input type="text" name="title" id="title" value="${obj.title}">
@@ -35,12 +55,20 @@ const modificarPeli=(id,obj)=>{
         <input type="text" name="src" id="src" value="${obj.src}">
     </div>
     <div class="input">
-        <input id="btn" type="button" value="Modificar">
+        <input id="btn" type="button" value="Modificar" onclik="procesarFormUpdate()">
     </div>
     <div class="input">
         <span></span>
     </div>
-</form>`
+</form>`;
+document.querySelector("#editar").addEventListener('click',()=>{
+    let title=document.querySelector("#title").value;
+    let src = document.querySelector("#src").value;
+    console.log(title,src);
+    console.log(obj.id);
+    misPeliculas.update(obj.id,{id:obj.id,title,src});
+})
+
 }
 function modificarUsuario(id,obj) {
    return `
@@ -53,7 +81,7 @@ function modificarUsuario(id,obj) {
         <input type="password" name="password" id="password" value="">
     </div>
     <div class="input">
-        <input id="btnModificarUsuario" type="button" value="Registrarme">
+        <input id="btnModificarUsuario" type="button" value="Modificar">
     </div>
     <div class="input">
         <span></span>
@@ -62,12 +90,27 @@ function modificarUsuario(id,obj) {
 `
 }
 
-document.querySelector("#btn").addEventListener('click',function () {
+// document.querySelector("#btn").addEventListener('click',function () {
 
-})
+// })
 
-function mostrarPelis() {
-    return `<table>
+function mostrarPelis(obj) {
+    let peliculas = ``;
+    obj.map((peli)=>{
+        peliculas+= `<tr>
+        <td>${peli.title}</td>
+        <td><img class="imgPeli" src="${peli.src}"></td>
+        <td><button onclick="update(${peli.id})">Editar</button></td>
+        <td><button onclick="deletePeli(${peli.id})">Borrar</button></td>
+    </tr> `;
+ 
+    
+
+    })
+    return `
+    <section>
+    <button id="add">Agregar</button>
+    <table>
     <thead>
         <tr>
             <th>Título</th>
@@ -77,13 +120,21 @@ function mostrarPelis() {
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <td>Título</td>
-            <td>Imagen</td>
-            <td>Editar</td>
-            <td>Borrar</td>
-        </tr>
+        ${peliculas}
     </tbody>
    </table>
+   </section>
     `
 }
+
+
+
+
+function deletePeli(id) {
+    misPeliculas.delete(id)
+}
+document.querySelector("#add").addEventListener('click',function () {
+    principal.innerHTML=agregarPeli()
+})
+
+
