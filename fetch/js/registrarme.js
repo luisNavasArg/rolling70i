@@ -2,17 +2,17 @@ let root = document.querySelector("#root");
 let usuarios = [];
 root.innerHTML = `
 <form action="./login.html" >
-    <h3>Registrarme</h3>
-    <div class="input">
+    <h3 class="text-white bg-primary text-center my-3">Registrarme</h3>
+    <div class="form-group">
         <input type="text" name="usuario" id="usuario" placeholder="Email">
     </div>
-    <div class="input">
+    <div class="form-group">
         <input type="password" name="password" id="password" placeholder="Password">
     </div>
-    <div class="input">
-        <input id="btn" type="submit" value="Registrarme"  >
+    <div class="form-group">
+        <input id="btn" class="btn btn-primary" type="submit" value="Registrarme"  >
     </div>
-    <div class="input">
+    <div class="form-group">
         <span></span>
     </div>
 </form>

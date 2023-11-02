@@ -1,14 +1,15 @@
 .body {
-    background-color: #1e2425;
-    padding-left: 7%;
-    padding-right: 7%;
+    background-color: #1e2425b1;
+    padding: 0px 50px;
+
+}
+a{
+    text-decoration: none;
 }
 
-
 .logo {
-    padding-left: 20px;
-    padding-top: 10px;
-    width: 60px;
+ 
+    width: 80px;
     height: 60px;
 
 }
@@ -62,14 +63,15 @@
     margin-top: 10px;
 
 }
+.root{
+    min-height: 400px;
+}
 
 .cajapadre {
-
     background-image: url(../img/1609408585_467254_1609408795_noticia_normal.jpg);
-    height: 410px;
+    background-blend-mode: saturation;
+    height: 250px;
     width: 98, 5%;
-
-
     border-radius: 5px;
     border: solid 10px;
     border-color: #37465b;
@@ -140,7 +142,7 @@
 
 .contenedor {
     display: flex;
-    height: 410px;
+    height: max-content;
     background-color: #37465b;
 
 
@@ -427,7 +429,7 @@
     margin-right: 40px;
 }
 img{
-    width: 150px !important;
+    width: 150px;
 }
 .itemgeneros {
     background-color: #1e2425;
@@ -555,12 +557,9 @@ img{
     }
 
     .logo {
-        margin-top: 10px;
+        
         height: 50px;
         width: 50px;
-
-
-
     }
 
     .detallestarwars {

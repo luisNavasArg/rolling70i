@@ -12,11 +12,11 @@ if (peliculas != null) {
         }
     });
     contenedor.innerHTML+=`
-    <div>
-        <a href="./detalle.html?id=${peli.id}">
-            <img src="${peli.src}" class="pulp">
-            <h3 class="titulopeli">${peli.title}</h3>
-        </a>
+    <div class="my-4 w-75 d-flex justify-content-between">  
+       <h3 class="titulopeli">${peli.title}</h3>     
+        <img src="${peli.src}">
+        
+        <p class="text-white">Acá la descripción de nuestra película</p>
     </div>
     `
 }
