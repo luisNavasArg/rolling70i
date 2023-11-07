@@ -1,3 +1,6 @@
+let us = JSON.parse(sessionStorage.getItem("user"));
+if (us.admin) {
+    
 let principal=document.querySelector("#principal");
 principal.innerHTML=mostrarPelis(misPeliculas.get());
 
@@ -137,5 +140,21 @@ function deletePeli(id) {
 document.querySelector("#add").addEventListener('click',function () {
     principal.innerHTML=agregarPeli()
 })
+}else{
+    alert("Disculpa pero no tienes permisos de administrador");
+    location.replace("./index.html");
+}
+
+// function sumar(a,b) {
+//     return a+b;
+// }
+// function restar(a,b) {
+//     return a-b;
+// }
+// setTimeout(()=>{
+//     console.log(sumar(4,7));
+// },2000)
+// console.log(restar(12,5));
+
 
 
