@@ -1,3 +1,6 @@
+import { calularDistancia, triangulo,calculoPromedio} from "./utils/cacular";
+import { heroes,calcularIva, calculadora, calcularIvaIncluido,usuarios } from "./utils/data";
+import { promesa } from "./promesa/promesa";
 function App() {
   let nombre = "Luis Navas";
   const PI=3.14;
@@ -23,11 +26,19 @@ reglas.splice(pos,1)
 console.log(reglasJoin); 
 const alumno ={name:"Juan",lastName:"Perez",old:34};
 const {name,old,lastName}=alumno;
-
+const notas=[7,8,4.5,6]
 const numeros = [14,36,98,85,100];
 const [a,b,c,...rest]=numeros;
 
 let resultado = reglas.find((regla)=>regla==="Para usar javascript embebido se usa las llaves")
+let [dibu,messi,julian,diMaria]=heroes;
+
+promesa.then(function (data) {
+  console.log(data);
+}).catch(function (error) {
+  console.log(error);
+})
+
 return (
     <div className="">
       Hola {nombre}
@@ -56,9 +67,29 @@ return (
         <p>{a}</p>
         <p>{b}</p>
         <p>{rest}</p>
+        {heroes.map(jugador=><p>{jugador.id} Nombre: {jugador.name} Camiseta N {jugador.numero} </p>)}
+    <div>
+      {dibu.name} Camiseta {dibu.numero}
     </div>
-    
-   
+    <div>
+      {messi.name} Camiseta {messi.numero}
+    </div>
+    <div>
+      {diMaria.name} Camiseta {diMaria.numero}
+    </div>
+    {calcularIva(1000)}
+    {calculadora("+",2,3)}
+    <p>{calcularIvaIncluido(1000)}</p>
+    <p>{triangulo(120,90)}</p>
+    <p>{calularDistancia(1200,1500)}</p>
+    <p>Promedio de notas {calculoPromedio(notas).toFixed(2)}</p>
+      {usuarios.map(usuario=>{
+        return usuario.admin?
+        <p style={{backgroundColor:'green'}}>{usuario.name} {usuario.apellido}</p>:
+        <p style={{backgroundColor:'red'}}>{usuario.name} {usuario.apellido}</p>
+      })}
+     
+    </div>
     )
 }
 
