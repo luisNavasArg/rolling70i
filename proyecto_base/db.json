@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "user": "luisNavas",
+      "password": "123456",
+      "email":"lpipnavas@gmail.com",
+      "admin":false
+    },
+    {
+      "id": 2,
+      "user": "Santiago",
+      "password": "123456",
+      "email":"santiago@gmail.com",
+      "admin":true
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "category":"cafeteria",
+      "name": "Capuchino",
+      "description": "Café con chocolate y leche",
+      "price":1800,
+      "src":"https://images.app.goo.gl/3Ge3rjPMcnExj8D1A"
+    },
+    {
+      "id": 2,
+      "category":"cafeteria",
+      "name": "Latex",
+      "description": "Café con leche",
+      "price":1800,
+      "src":"https://images.app.goo.gl/Yuky68zd1yHUB6pH7"
+    },
+    {
+      "id": 3,
+      "category":"cafeteria",
+      "name": "Café con leche y 2 medialunas",
+      "description": "Café con leche y dos medialunas",
+      "price":1800,
+      "src":"https://images.app.goo.gl/unr6PAtS6VTn2gBt7"
+    }
+  ]
+}
