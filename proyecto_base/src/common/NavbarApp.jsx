@@ -1,18 +1,27 @@
 import React from 'react'
 import {Navbar,Nav} from 'react-bootstrap';
 import logo from '/logo.svg'
-const NavbarApp = () => {
+import { Link, NavLink} from "react-router-dom";
+const NavbarApp = ({admin}) => {
   return (
-    <Navbar className='d-flex justify-content-center bg-dark text-white' >
+    <Navbar className='d-flex justify-content-center text-white' bg="dark" data-bs-theme="dark" >
         <Nav className='me-auto'>
-            <button>
+            <Link className='navbar-branch' to="/">
                 <img src={logo} alt="" />
-            </button>
-            <ul>
-                <li><a href="/">Inicio</a></li>
-                <li><a href="/nosotros">Nosotros</a></li>
-                <li><a href="/admin">Admin</a></li>
-            </ul>
+            </Link>
+            <NavLink className='nav-link' to='/'>
+            Inicio
+            </NavLink>
+            <NavLink className='nav-link' to='/nosotros'>
+            Nosotros
+            </NavLink>
+            <NavLink className='nav-link' to='/ingresar'>
+            Ingresar
+            </NavLink>
+            
+            {admin?<NavLink className='nav-link' to='/admin'>
+            Administrador
+            </NavLink>:""}
         </Nav>
 
     </Navbar>
