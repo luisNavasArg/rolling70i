@@ -12,6 +12,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AddProduct from './views/AddProduct'
 import Admin from './views/Admin';
 import Login from './views/Login';
+import UserContext from './components/ContextUser';
 
 function App() {
   const [products,setProducts]=useState([]);
@@ -20,8 +21,10 @@ function App() {
     "user": "",
     "password": "",
     "email":"",
-    "admin":false
+    "admin":false,
+    "theme":"light"
   })
+
   const getData=async()=>{
     let data= await getProducts();
     setProducts(data);
@@ -36,7 +39,8 @@ function App() {
  
   
   return (
-    <BrowserRouter>
+    <UserContext.Provider value={{user,setUser}}>
+      <BrowserRouter>
     <NavbarApp admin={user.admin}/>
     <Routes>
         <Route  path='/' element={<Home products={products}/>}/>
@@ -46,11 +50,14 @@ function App() {
         </Route>
         <Route path='/nosotros' element={<About/>}/>
         {/* Enviar una función como props */}
-        <Route path='/ingresar' element={<Login setUser={setUser}/>}/>
+        <Route path='/ingresar' element={<Login />}/>
         <Route path='/*' element={<ErrorScreen/>}/>
     </Routes>
     <Footer/>
     </BrowserRouter>
+
+    </UserContext.Provider>
+    
   )
 }
 

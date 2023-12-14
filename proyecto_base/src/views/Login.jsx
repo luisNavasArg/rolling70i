@@ -1,7 +1,13 @@
 import { useForm } from "react-hook-form"
+import { useContext } from "react";
 import {Button,Form,FormControl,FormGroup} from 'react-bootstrap';
-import {getUsers} from '../utils'
-const Login = ({setUser}) => {
+import {getUsers} from '../utils';
+import UserContext from "../components/ContextUser";
+
+
+const Login = () => {
+
+    const {user,setUser}=useContext(UserContext);
     const {register,handleSubmit,formState:{errors},reset} = useForm();
     const login=async(user)=>{
         let users= await getUsers();

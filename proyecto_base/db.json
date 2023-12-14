@@ -5,6 +5,7 @@
       "user": "luisNavas",
       "password": "123456",
       "email":"lpipnavas@gmail.com",
+      "theme":"light",
       "admin":false
     },
     {
@@ -12,6 +13,7 @@
       "user": "Santiago",
       "password": "123456",
       "email":"santiago@gmail.com",
+      "theme":"light",
       "admin":true
     }
   ],
