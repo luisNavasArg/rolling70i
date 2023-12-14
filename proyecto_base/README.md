@@ -22,3 +22,6 @@ Día 3
 - Modificamos el navbar agregando componentes de react-router-dom y bootstrap
 - Creamos la view de AddProduct(Falta el componente Select)
 
+Día 4 
+- Agregamos el contexto del usuario
+
