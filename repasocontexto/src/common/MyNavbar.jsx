@@ -11,7 +11,7 @@ const MyNavbar = () => {
       window.localStorage.setItem("theme",JSON.stringify(context));
     }
     const changeMode=()=>{
-        // let body=document.querySelector("body");
+        // let body=document.querySelector("body"); No se debe hacer esto
         let myContext=JSON.parse(window.localStorage.getItem("theme")) || context;
         console.log(myContext);
         if (myContext.bg==="light") {
