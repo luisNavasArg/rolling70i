@@ -24,4 +24,41 @@ Día 3
 
 Día 4 
 - Agregamos el contexto del usuario
+Día 5
+- Agregamos en el admin el modo oscuro en el elemento principal desde el contexto
+- Agregamos las vistas DetailProduct, Products
+- Creamos la lógica para añadir productos, para traer un producto y mostrarlo en el detalle
+```
+export const addProduct=async(obj)=>{
+    try {
+       let add= await axios.post(URLproducts,obj);
+       if (add.status==201) {
+            return true
+       }else{
+        alert("estamos en index")
+       }
+
+    } catch (error) {
+        return false
+    }
+
+}
+export const getOneProduct=async(id)=>{
+    try {
+        let product= await axios.get(`${URLproducts}/${id}`);
+        if (product.status===200) {
+            return product.data
+
+        }else{
+            return null
+        }
+
+    } catch (error) {
+
+        return null
+    }
+}
+```
+- Mostramos los productos en las vistas DetailProduct, Products
+
 
