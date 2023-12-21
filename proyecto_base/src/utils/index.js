@@ -31,3 +31,32 @@ export const getUsers=async()=>{
         return []
     }
 }
+export const addProduct=async(obj)=>{
+    try {
+       let add= await axios.post(URLproducts,obj);
+       if (add.status==201) {
+            return true
+       }else{
+        alert("estamos en index")
+       }
+
+    } catch (error) {
+        return false
+    }
+
+}
+export const getOneProduct=async(id)=>{
+    try {
+        let product= await axios.get(`${URLproducts}/${id}`);
+        if (product.status===200) {
+            return product.data
+            
+        }else{
+            return null
+        }
+
+    } catch (error) {
+       
+        return null
+    }
+}

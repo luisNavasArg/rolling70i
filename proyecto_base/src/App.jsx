@@ -12,7 +12,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import AddProduct from './views/AddProduct'
 import Admin from './views/Admin';
 import Login from './views/Login';
-import UserContext from './components/ContextUser';
+import ContextUser from './components/ContextUser';
+import Products from './views/Products';
+import DetailProduct from './views/DetailProduct';
 
 function App() {
   const [products,setProducts]=useState([]);
@@ -22,7 +24,8 @@ function App() {
     "password": "",
     "email":"",
     "admin":false,
-    "theme":"light"
+    "theme":"light",
+    "colorText":"dark"
   })
 
   const getData=async()=>{
@@ -39,15 +42,17 @@ function App() {
  
   
   return (
-    <UserContext.Provider value={{user,setUser}}>
+    <ContextUser.Provider value={{user,setUser}}>
       <BrowserRouter>
     <NavbarApp admin={user.admin}/>
     <Routes>
         <Route  path='/' element={<Home products={products}/>}/>
-        <Route path='/admin' element={<RoutesPrivates admin={user.admin}/>}>
+        {/* <Route path='/admin' element={<RoutesPrivates />}> */}
             <Route path='/admin' element={<Admin/>}/>
             <Route path='/admin/agregarProducto' element={<AddProduct/>}/>
-        </Route>
+            <Route path='/admin/productos' element={<Products products={products}/>}/>
+            <Route path='/admin/detalleProducto/:id' element={<DetailProduct/>}/>
+        {/* </Route> */}
         <Route path='/nosotros' element={<About/>}/>
         {/* Enviar una función como props */}
         <Route path='/ingresar' element={<Login />}/>
@@ -56,7 +61,7 @@ function App() {
     <Footer/>
     </BrowserRouter>
 
-    </UserContext.Provider>
+    </ContextUser.Provider>
     
   )
 }

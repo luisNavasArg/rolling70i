@@ -1,7 +1,6 @@
 import { useContext, useState } from 'react';
 import UserContext from './ContextUser';
-import {Button} from 'react-bootstrap'
-
+import { Link} from "react-router-dom";
 
 
 const MyButton = () => {
@@ -17,6 +16,7 @@ const MyButton = () => {
           password: user.password,
           email:user.email,
           theme:"dark",
+          colorText:"light",
           admin:user.admin})
           
           
@@ -28,12 +28,13 @@ const MyButton = () => {
             password: user.password,
             email:user.email,
             theme:"light",
+            colorText:"dark",
             admin:user.admin})
           console.log(user.theme);
         }
     }
   return (
-    <Button className={`text-${user.theme}`} onClick={changeTheme}>Tema</Button>
+    <Link className={`link text-${user.colorText}`} onClick={changeTheme}>Tema</Link>
   )
 }
 
