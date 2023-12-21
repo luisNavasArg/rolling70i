@@ -1,0 +1,56 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "user": "luisNavas",
+      "password": "123456",
+      "email": "lpipnavas@gmail.com",
+      "theme": "light",
+      "colorText": "dark",
+      "admin": false
+    },
+    {
+      "id": 2,
+      "user": "Santiago",
+      "password": "123456",
+      "email": "santiago@gmail.com",
+      "theme": "light",
+      "colorText": "dark",
+      "admin": true
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "category": "cafeteria",
+      "name": "Capuchino",
+      "description": "Café con chocolate y leche",
+      "price": 1800,
+      "src": "https://cdn0.recetasgratis.net/es/posts/2/4/2/capuchino_16242_600.jpg"
+    },
+    {
+      "id": 2,
+      "category": "cafeteria",
+      "name": "Late",
+      "description": "Café con leche",
+      "price": 1800,
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo3KeLkX3UQbr-sE0NjNh_rTs6_H9mq1mLMinzt9iqVOjeISPllRrR_x9VZMf3ll13MCk&usqp=CAU"
+    },
+    {
+      "id": 3,
+      "category": "cafeteria",
+      "name": "Café con leche y 2 medialunas",
+      "description": "Café con leche y dos medialunas",
+      "price": 1800,
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgJ3kJX39mmUl-afSDsbXMdWfpJl6ZQQSP-bxl2KrEZg_yxOKggSdLHnXLXFxbccasxgQ&usqp=CAU"
+    },
+    {
+      "name": "Chocolate con pasas",
+      "description": "Delicioso chocalte de cacao puro",
+      "price": "1500",
+      "src": "https://acdn.mitiendanube.com/stores/002/625/145/products/pasas-choco1-d2c2ab9b7b4649b91c16793396210983-1024-1024.jpg",
+      "category": "cafeteria",
+      "id": 4
+    }
+  ]
+}
