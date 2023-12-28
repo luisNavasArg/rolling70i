@@ -61,4 +61,13 @@ export const getOneProduct=async(id)=>{
 ```
 - Mostramos los productos en las vistas DetailProduct, Products
 
+Día 6
+- Creamos la vista y la ruta de para Update Product
+- Creamos las funciones de update y delete product
+- Usamos el useNavigate de react-router-dom
+- Incorporamos la dependencia sweetalert2 y usamos dotenv
+- Usamos el contexto de la app para mostrar o ocultar los botones de agregar,modificar y borrar producto
+- Agregarmos un icono para ir a la ruta agregar producto
+
+
 

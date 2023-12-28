@@ -1,5 +1,6 @@
-let URLproducts = "http://localhost:3000/products";
-let URLuser ="http://localhost:3000/users";
+let URLproducts = import.meta.env.VITE_ENV_URL_PRODUCTS;
+let URLuser =import.meta.env.VITE_ENV_URL_USERS;
+console.log(URLuser);
 import axios from 'axios';
 export const getProducts=async()=>{
     try {
@@ -54,6 +55,39 @@ export const getOneProduct=async(id)=>{
         }else{
             return null
         }
+
+    } catch (error) {
+       
+        return null
+    }
+}
+export const updateProduct=async(id,obj)=>{
+    try {
+        let product= await axios.put(`${URLproducts}/${id}`,obj)
+        if (product.status===200) {
+            return product.data
+            
+        }else{
+            return null
+        }
+        
+
+    } catch (error) {
+       
+        return null
+    }
+}
+export const deleteProduct=async(id)=>{
+    try {
+        let product= await axios.delete(`${URLproducts}/${id}`)
+        // if (product.status===200) {
+        //     return product.data
+            
+        // }else{
+        //     return null
+        // }
+        console.log(product);
+        
 
     } catch (error) {
        

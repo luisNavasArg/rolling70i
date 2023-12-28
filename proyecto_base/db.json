@@ -29,12 +29,12 @@
       "src": "https://cdn0.recetasgratis.net/es/posts/2/4/2/capuchino_16242_600.jpg"
     },
     {
-      "id": 2,
       "category": "cafeteria",
       "name": "Late",
-      "description": "Café con leche",
+      "description": "Café con leche Late",
       "price": 1800,
-      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo3KeLkX3UQbr-sE0NjNh_rTs6_H9mq1mLMinzt9iqVOjeISPllRrR_x9VZMf3ll13MCk&usqp=CAU"
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo3KeLkX3UQbr-sE0NjNh_rTs6_H9mq1mLMinzt9iqVOjeISPllRrR_x9VZMf3ll13MCk&usqp=CAU",
+      "id": 2
     },
     {
       "id": 3,
@@ -51,6 +51,14 @@
       "src": "https://acdn.mitiendanube.com/stores/002/625/145/products/pasas-choco1-d2c2ab9b7b4649b91c16793396210983-1024-1024.jpg",
       "category": "cafeteria",
       "id": 4
+    },
+    {
+      "name": "Licuado con tostado",
+      "description": "Rico licuado con tostado mixto, frutilla, banana",
+      "price": "10000",
+      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ0wGkdKlpQHKHLylwjgxN73wqRB2tZhbUjNS3h2ic0FSLDQj6Q2QxHUdkZg&s",
+      "category": "cafeteria",
+      "id": 5
     }
   ]
 }

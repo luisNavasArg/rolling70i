@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card';
 const DetailProduct = () => {
     const [prod,setProd]=useState({});
     const {id}=useParams();
-    const addProduct=(id)=>{
+    const getProduct=(id)=>{
         getOneProduct(id).then((result)=>{
            
             if (result) {
@@ -19,7 +19,7 @@ const DetailProduct = () => {
     
     
     useEffect(()=>{
-        addProduct(id);
+        getProduct(id);
     },[])
   return (
     <Card style={{ width: '18rem' }}>

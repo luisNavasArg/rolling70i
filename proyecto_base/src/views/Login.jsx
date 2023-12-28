@@ -23,7 +23,26 @@ const Login = () => {
         }
     }
   return (
-    <Form onSubmit={handleSubmit(login)}>
+    <>    
+    <style type="text/css">
+        {`
+    .btn-flat {
+      background-color: purple;
+      color: white;
+    }
+    .btn-flat:hover {
+        background-color: black;
+        color: white;
+      }
+
+    .btn-xxl {
+      padding: 1rem 1.5rem;
+      font-size: 1.5rem;
+    }
+    `}
+      </style>
+    <div className="d-flex justify-content-center m-4">
+    <Form onSubmit={handleSubmit(login)} className="w-25">
         <FormGroup>
             <Form.Label>
                 Email
@@ -49,9 +68,12 @@ const Login = () => {
             </Form.Text>
         </FormGroup>
         <FormGroup>
-            <Button type="submit">Ingresar</Button>
+            <Button variant="flat" type="submit">Ingresar</Button>
         </FormGroup>
     </Form>
+    </div>
+    </>
+
   )
 }
 
