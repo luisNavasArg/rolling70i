@@ -41,16 +41,20 @@ function MyCard({ product }) {
         <Card.Text>
           {product.description}
         </Card.Text>
-        <Button className='my-4' variant="primary"><NavLink className='nav-link' to={`/admin/detalleProducto/${product.id}`}>
+        <Button className='my-4' variant="primary">
+          <NavLink className='nav-link' to={`/admin/detalleProducto/${product.id}`}>
           Ver detalle
         </NavLink></Button>
         {user.admin?<>
           <Button variant="success"><NavLink className='nav-link' to={`/admin/modificarProducto/${product.id}`}>
          Modificar
         </NavLink></Button>
+        <NavLink className='nav-link' to={`/admin`}>
         <Button variant="danger" onClick={()=>eliminar(product.id)}>
          Eliminar
-        </Button></>:''}
+        </Button>
+        </NavLink>
+        </>:''}
       </Card.Body>
     </Card>
   );

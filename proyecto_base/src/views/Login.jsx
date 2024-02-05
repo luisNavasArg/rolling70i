@@ -1,12 +1,12 @@
 import { useForm } from "react-hook-form"
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import {Button,Form,FormControl,FormGroup} from 'react-bootstrap';
 import {getUsers} from '../utils';
 import UserContext from "../components/ContextUser";
-
+import {Navigate}  from "react-router-dom";
 
 const Login = () => {
-
+    const [navigate,setNavigate]=useState(false);
     const {user,setUser}=useContext(UserContext);
     const {register,handleSubmit,formState:{errors},reset} = useForm();
     const login=async(user)=>{
@@ -20,7 +20,11 @@ const Login = () => {
         })
         if(objUser.admin!=undefined){
             setUser(objUser)
+            setNavigate(true);
         }
+    }
+    if (navigate) {
+        return <Navigate to="/admin"/>
     }
   return (
     <>    
@@ -41,7 +45,7 @@ const Login = () => {
     }
     `}
       </style>
-    <div className="d-flex justify-content-center m-4">
+    <div className="main d-flex justify-content-center m-4">
     <Form onSubmit={handleSubmit(login)} className="w-25">
         <FormGroup>
             <Form.Label>

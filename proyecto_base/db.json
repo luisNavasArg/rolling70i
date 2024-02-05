@@ -29,14 +29,6 @@
       "src": "https://cdn0.recetasgratis.net/es/posts/2/4/2/capuchino_16242_600.jpg"
     },
     {
-      "category": "cafeteria",
-      "name": "Late",
-      "description": "Café con leche Late",
-      "price": 1800,
-      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSo3KeLkX3UQbr-sE0NjNh_rTs6_H9mq1mLMinzt9iqVOjeISPllRrR_x9VZMf3ll13MCk&usqp=CAU",
-      "id": 2
-    },
-    {
       "id": 3,
       "category": "cafeteria",
       "name": "Café con leche y 2 medialunas",
@@ -59,6 +51,14 @@
       "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ0wGkdKlpQHKHLylwjgxN73wqRB2tZhbUjNS3h2ic0FSLDQj6Q2QxHUdkZg&s",
       "category": "cafeteria",
       "id": 5
+    },
+    {
+      "name": "Chocolate con pasas",
+      "description": "Delicioso chocalte de cacao puro",
+      "price": "50000",
+      "src": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAoHCBQUFBgVFBQZGRgaGx0aGxkaGiEhGRobGRobGRoaGyIbIS0kGyEqHxoaJTclKi4xNDQ0GyM6PzozPi0zNDEBCwsLEA8QHxISHTMqJCszMzMzMzMzPjMzMzMzMzMzMzM1MzMxMzMzMzMzNTMzMzMzMzMzMzMzMzMzMzMzMzMzM//AABEIAKgBLAMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAAFAQIDBAYAB//EAEEQAAIBAwMCBAQDBgQEBQUAAAECEQADIQQSMQVBIlFhcRMygZEGQqEjUrHB0fAUYuHxJDNDkhZTcrLCBxWCotL/xAAaAQADAQEBAQAAAAAAAAAAAAABAgMABAUG/8QALREAAgIBAwIEBAcBAAAAAAAAAAECEQMEITESQRMyUXEiM0JhFCOBkaGx8PH/2gAMAwEAAhEDEQA/ALkUsUsV0V7h82cBXAUsUtYx0UoFKKWsGhAKWKWlisGhIpYpQK6KWwnRXRS05Cs+Ix5VnKlbDGLk6QyK6KeykYPPlSRWszTQ2K6KfFdFawDIrop8V0VrMMiuinRXRWswwikinxSRRsw2KSKfFdFExFFIRUkUhFYFEZFIRUhFNIrAaGEUhFPIpCKNgojIpCKkIpCK1goiIppFSkU0ijYCOKaRUhFIRWMRkUkVIRSRWBRbpaQVwqZYdSikpRWMKKdSUooWYWlApKcK1mOpYpEdSxXcJAk549/KrVlre1j80QAfUsBgf1pZTSKwxOQ/RaVmIhe2J49zU+o0KWwql1nGSCcjknjzwPWqen17ObhVIUNCxgGeG85IjjieKs3k3Ah8xk54EGAPWYrnlJyds7IQjFUgZr9K9t5VlbMwJnaclSAI9s/zp1i6rjcvHH1HIqDqvUF04/aW9zsuGUCSR5nuJPHt50Ms625cO+2MnDKSNxPYkfKDwPOnhPsyeTHatB6KWKpW+orIV5Vj+",
+      "category": "cafeteria",
+      "id": 6
     }
   ]
 }

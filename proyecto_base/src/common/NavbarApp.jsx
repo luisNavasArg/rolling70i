@@ -6,7 +6,18 @@ import UserContext from '../components/ContextUser';
 
 import MyButton from '../components/MyButton'
 const NavbarApp = () => {
-  const {user}=useContext(UserContext);
+  const {user,setUser}=useContext(UserContext);
+  const logout=()=>{
+    setUser({
+      "id": 0,
+      "user": "",
+      "password": "",
+      "email":"",
+      "admin":false,
+      "theme":"light",
+      "colorText":"dark"
+    });
+  }
   useEffect(() => {
     console.log(" se rendizó el componente");
   
@@ -34,9 +45,20 @@ const NavbarApp = () => {
 
             </NavLink>
             
-            {user.admin?<NavLink className='nav-link' to='/admin'>
+            {user.admin?<>
+              <NavLink className='nav-link' to='/admin'>
             Administrador
-            </NavLink>:""}
+            </NavLink>
+            <NavLink className='nav-link' to='/admin/agregarProducto'>
+            Agregar Producto
+            </NavLink>
+            <NavLink className='nav-link' to='/admin/productos'>
+            Administrar productos
+            </NavLink>
+            <NavLink className='nav-link' onClick={logout}>
+            Salir
+            </NavLink>
+            </>:""}
         </Nav>
 
     </Navbar>
