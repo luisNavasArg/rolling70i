@@ -10,9 +10,9 @@ const userGet=function (req,res) {
     res.json({id:miid});
 }
 const createUser=async(req=request,res=response)=>{
-    let {nombre,correo,password,img,rol,estado}=req.body;
+    let {nombre,email,password,img,rol,estado}=req.body;
 
-    const usuario = new Usuario({nombre,correo,password:bcrypt.hashSync(password,10),img,rol,estado});
+    const usuario = new Usuario({nombre,email,password:bcrypt.hashSync(password,10),img,rol,estado});
     await usuario.save();
     res.json({usuario,message:"Usuario creado correctamente"});
 }
