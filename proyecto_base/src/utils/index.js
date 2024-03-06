@@ -6,11 +6,12 @@ export const getProducts=async()=>{
     try {
         let products= await axios.get(URLproducts);
         if (products.status===200) {
-            return products.data
+            return products.data.productos
             
         }else{
             return []
         }
+        
 
     } catch (error) {
         console.log(error);
@@ -34,7 +35,7 @@ export const getUsers=async()=>{
 }
 export const addProduct=async(obj)=>{
     try {
-       let add= await axios.post(URLproducts,obj);
+       let add= await axios.post(URLproducts+"/createProduct",obj);
        if (add.status==201) {
             return true
        }else{

@@ -8,7 +8,9 @@ const AddProduct = () => {
     const { register, handleSubmit, control, formState: { errors }, reset } = useForm();
     const navigate=useNavigate();
     const addItem = (product) => {
+        //validar el temaño de la url
         addProduct(product).then((result) => {
+            console.log(product);
             if (result) {
           
                 Swal.fire({
@@ -89,7 +91,11 @@ const AddProduct = () => {
                     </Form.Label>
                     <FormControl
                         type="text"
-                        {...register("src", { required: "Este campo es obligatorio" })}
+                        {...register("src", 
+                        { required: "Este campo es obligatorio",
+                            maxLength: 200,
+                            msg:"La Url es muy larga"
+                         })}
                     />
                     <Form.Text>
                         {errors.src?.message}
