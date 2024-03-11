@@ -1,6 +1,7 @@
 let URLproducts = import.meta.env.VITE_ENV_URL_PRODUCTS;
+let URLproductsLocal = import.meta.env.VITE_ENV_URL_PRODUCTS_LOCAL
 let URLuser =import.meta.env.VITE_ENV_URL_USERS;
-console.log(URLuser);
+
 import axios from 'axios';
 export const getProducts=async()=>{
     try {
@@ -34,6 +35,7 @@ export const getUsers=async()=>{
     }
 }
 export const addProduct=async(obj)=>{
+    console.log(URLproducts);
     try {
        let add= await axios.post(URLproducts+"/createProduct",obj);
        if (add.status==201) {
@@ -41,8 +43,10 @@ export const addProduct=async(obj)=>{
        }else{
         alert("estamos en index")
        }
+   
 
     } catch (error) {
+        console.log(error);
         return false
     }
 
@@ -64,7 +68,7 @@ export const getOneProduct=async(id)=>{
 }
 export const updateProduct=async(id,obj)=>{
     try {
-        let product= await axios.put(`${URLproducts}/${id}`,obj)
+        let product= await axios.put(`${URLproductsLocal}/${id}`,obj)
         if (product.status===200) {
             return product.data
             
@@ -80,7 +84,7 @@ export const updateProduct=async(id,obj)=>{
 }
 export const deleteProduct=async(id)=>{
     try {
-        let product= await axios.delete(`${URLproducts}/${id}`)
+        let product= await axios.delete(`${URLproductsLocal}/${id}`)
         // if (product.status===200) {
         //     return product.data
             
