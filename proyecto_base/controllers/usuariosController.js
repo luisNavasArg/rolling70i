@@ -11,6 +11,7 @@ const userGet=function (req,res) {
 }
 const createUser=async(req=request,res=response)=>{
     let {nombre,email,password,img,rol,estado}=req.body;
+    console.log(req.body);
 
     const usuario = new Usuario({nombre,email,password:bcrypt.hashSync(password,10),img,rol,estado});
     await usuario.save();

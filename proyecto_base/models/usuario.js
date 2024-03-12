@@ -32,7 +32,4 @@ UsuarioSchema.methods.toJSON=function () {
     usuario.password=password;
     return usuario;
 }
-
-
-
 module.exports=model("Usuario",UsuarioSchema);
