@@ -4,13 +4,13 @@ import logo from '/logo.svg'
 import { Link, NavLink} from "react-router-dom";
 import UserContext from '../components/ContextUser';
 
-import MyButton from '../components/MyButton'
+import MyButton from '../components/MyButton';
 const NavbarApp = () => {
   const {user,setUser}=useContext(UserContext);
   const logout=()=>{
     setUser({
-      "id": 0,
-      "user": "",
+      "uid": 0,
+      "nombre": "",
       "password": "",
       "email":"",
       "admin":false,
@@ -18,16 +18,24 @@ const NavbarApp = () => {
       "colorText":"dark"
     });
   }
-  useEffect(() => {
-    console.log(" se rendizó el componente");
-  
- 
-  }, [])
-  
 
   return (
     <Navbar className='d-flex justify-content-center text-white' bg={user.theme} data-bs-theme={user.theme} >
         <Nav className='me-auto'>
+            {user.admin?<>
+              <NavLink className='nav-link' to='/admin'>
+            Administrador
+            </NavLink>
+            <NavLink className='nav-link' to='/admin/agregarProducto'>
+            Agregar Producto
+            </NavLink>
+            <NavLink className='nav-link' to='/admin/productos'>
+            Administrar productos
+            </NavLink>
+            <NavLink className='nav-link' onClick={logout}>
+            Salir
+            </NavLink>
+            </>:<>
             <Link className='navbar-branch' to="/">
                 <img src={logo} alt="" />
             </Link>
@@ -42,25 +50,9 @@ const NavbarApp = () => {
             </NavLink>
             <NavLink className='nav-link'>
               <MyButton />
-
             </NavLink>
-            
-            {user.admin?<>
-              <NavLink className='nav-link' to='/admin'>
-            Administrador
-            </NavLink>
-            <NavLink className='nav-link' to='/admin/agregarProducto'>
-            Agregar Producto
-            </NavLink>
-            <NavLink className='nav-link' to='/admin/productos'>
-            Administrar productos
-            </NavLink>
-            <NavLink className='nav-link' onClick={logout}>
-            Salir
-            </NavLink>
-            </>:""}
+            </>}
         </Nav>
-
     </Navbar>
   )
 }

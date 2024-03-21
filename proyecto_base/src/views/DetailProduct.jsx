@@ -8,7 +8,6 @@ const DetailProduct = () => {
     const {id}=useParams();
     const getProduct=(id)=>{
         getOneProduct(id).then((result)=>{
-           
             if (result) {
                 setProd(result)
             }else{
@@ -22,9 +21,11 @@ const DetailProduct = () => {
         getProduct(id);
     },[])
   return (
-    <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src={prod.src} />
-      <Card.Body>
+    <div className="d-flex justify-content-center m-4">
+    <div style={{display:'flex',justifyContent:'space-around' }}>
+      <Card.Img variant="top" style={{ width: '80%' }} src={prod.src} />
+      <Card>
+      <Card.Body >
         <Card.Title>{prod.name}</Card.Title>
         <Card.Text><strong>{prod.category}</strong></Card.Text>
         <Card.Text>
@@ -35,7 +36,9 @@ const DetailProduct = () => {
         </Card.Text>
   
       </Card.Body>
-    </Card>
+      </Card>
+    </div>
+    </div>
   )
 }
 

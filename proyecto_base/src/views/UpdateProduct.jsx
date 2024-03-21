@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { getOneProduct, updateProduct } from '../utils';
+import { getOneProduct, updateProduct,getProducts } from '../utils';
 import {Button,Form,FormControl,FormGroup} from 'react-bootstrap';
 import { useForm} from "react-hook-form"
-const DetailProduct = () => {
-    const [prod,setProd]=useState({});
+import { useNavigate} from 'react-router-dom'
+const DetailProduct = ({setProducts}) => {
+    const navigate=useNavigate();
     const {id}=useParams();
     const {register,handleSubmit,formState:{errors},reset,setValue}=useForm();
     const getProduct=(id)=>{
@@ -17,18 +18,19 @@ const DetailProduct = () => {
                 setValue("price",result.price);
                 setValue("src",result.src);
                 setValue("category",result.category)
-
-
             }else{
                 console.log("no hay info");
             }
         })
     }
     const updateItem=(obj)=>{
-      updateProduct(id,obj).then((result)=>{
-        console.log(result);
+      updateProduct(id,obj).then(async(result)=>{
+       
         if (result) {
+            let products=await getProducts();
+            setProducts(products);
           alert(`Se ha modificado el producto ${result.name}`);
+          navigate("/");
         }else{
           alert("No se pudo modificar el producto")
         }

@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import {useContext} from 'react'
 import ContextUser from '../components/ContextUser';
 import { NavLink} from "react-router-dom";
-const Products = ({products}) => {
+const Products = ({products,setProducts}) => {
     const {user} = useContext(ContextUser)
   return (
     <main className='main d-flex justify-content-around align-items-center flex-wrap'>
@@ -21,7 +21,7 @@ const Products = ({products}) => {
       
         :''}
         {products.map((product,i)=>{
-            return <MyCard product={product}/>
+            return <MyCard key={`prod+${i}`} product={product} setProducts={setProducts}/>
         })}
     </main>
   )

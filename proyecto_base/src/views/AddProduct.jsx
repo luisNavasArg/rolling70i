@@ -1,39 +1,52 @@
 import { useForm, Controller } from "react-hook-form"
 import { Button, Form, FormControl, FormGroup } from 'react-bootstrap';
-import { addProduct } from "../utils";
+import { addProduct,getProducts } from "../utils";
 import Swal from 'sweetalert2';
 import {useNavigate} from 'react-router-dom'
 
-const AddProduct = () => {
+const AddProduct = ({setProducts}) => {
     const { register, handleSubmit, control, formState: { errors }, reset } = useForm();
     const navigate=useNavigate();
     const addItem = (product) => {
         //validar el temaño de la url
         addProduct(product).then((result) => {
-            console.log(product);
+           
             if (result) {
-          
-                Swal.fire({
-                    title: `Se agregó el producto ${result.name}`,
-                    text: "You clicked the button!",
-                    icon: "success"
-                });
-                Swal.fire({
-                    title: "Deseas agregar otro producto?",
-                    showDenyButton: true,
-                    showCancelButton: true,
-                    confirmButtonText: "Si",
-                    denyButtonText: `No`
-                  }).then((result) => {
-                    /* Read more about isConfirmed, isDenied below */
-                    if (result.isConfirmed) {
-                      
-                     reset();
+                if (result ==="Está duplicado la descripción") {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Ocurrio un error, Está duplicado la descripción',
+                        icon: 'error',
+                        confirmButtonText: 'Cool'
+                    })
+                }else{
+                    Swal.fire({
+                        title: `Se agregó el producto ${result.name}`,
+                        text: "You clicked the button!",
+                        icon: "success"
+                    });
+                    Swal.fire({
+                        title: "Deseas agregar otro producto?",
+                        showDenyButton: true,
+                        showCancelButton: true,
+                        confirmButtonText: "Si",
+                        denyButtonText: `No`
+                      }).then(async(result) => {
+                        let prds= await getProducts();
+                        setProducts(prds);
+                        /* Read more about isConfirmed, isDenied below */
+                        if (result.isConfirmed) {
+                       
+                         reset();
+                  
+                        } else if (result.isDenied) {
+                          navigate("/admin/productos")
+                        }
+                        
+    
+                      });
+                }
               
-                    } else if (result.isDenied) {
-                      navigate("/admin/productos")
-                    }
-                  });
 
             } else {
                 Swal.fire({

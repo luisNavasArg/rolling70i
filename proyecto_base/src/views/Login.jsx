@@ -4,17 +4,25 @@ import {Button,Form,FormControl,FormGroup} from 'react-bootstrap';
 import {getUsers} from '../utils';
 import UserContext from "../components/ContextUser";
 import {Navigate}  from "react-router-dom";
-
+import bcrypt from "bcryptjs-react";
 const Login = () => {
     const [navigate,setNavigate]=useState(false);
     const {user,setUser}=useContext(UserContext);
     const {register,handleSubmit,formState:{errors},reset} = useForm();
     const login=async(user)=>{
         let users= await getUsers();
+        
         let objUser = {};
         users.map((myUser)=>{
-            if((myUser.email===user.email) && (myUser.password===user.password)){
-                objUser = myUser
+            
+            if(myUser.email===user.email && bcrypt.compareSync(user.password,myUser.password)){
+                objUser.email=myUser.email;
+                objUser.estado=myUser.estado;
+                objUser.img=myUser.img;
+                objUser.nombre=myUser.nombre;
+                objUser.password=myUser.password;
+                objUser.admin=myUser.rol==="admin";
+                objUser.uid= myUser.uid;
             }
            
         })

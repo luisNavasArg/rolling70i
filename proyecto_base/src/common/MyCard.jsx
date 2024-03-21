@@ -3,12 +3,11 @@ import Card from 'react-bootstrap/Card';
 import { NavLink, useNavigate} from 'react-router-dom'
 import { useContext } from 'react'
 import ContextUser from '../components/ContextUser';
-import {deleteProduct} from '../utils/index'
+import {deleteProduct,getProducts} from '../utils/index'
 import Swal from 'sweetalert2';
-function MyCard({ product }) {
+function MyCard({ product, setProducts}) {
   const { user } = useContext(ContextUser);
   const navigate=useNavigate();
-  console.log(user);
   const eliminar=(id)=>{
     Swal.fire({
       title: "Deseas eliminar el producto?",
@@ -16,26 +15,33 @@ function MyCard({ product }) {
       showCancelButton: true,
       confirmButtonText: "Si",
       denyButtonText: `No`
-    }).then((result) => {
+    }).then(async(result) => {
       /* Read more about isConfirmed, isDenied below */
+      
       if (result.isConfirmed) {
-        deleteProduct(id).then((result)=>{
-          if (result==undefined) {
-            
+        deleteProduct(id).then(async(result)=>{
+          console.log(result);
+          if (result==null) {
+            Swal.fire("No se eliminó el producto", "", "info");
+          }else{
+            Swal.fire("Eliminado!", "", "success");
+            let products = await getProducts();
+            setProducts(products)
+            navigate("/")
           }
         })
-        Swal.fire("Eliminado!", "", "success");
-        navigate("/")
+        
 
-      } else if (result.isDenied) {
-        Swal.fire("No se eliminó el producto", "", "info");
-      }
+      } 
     });
     
   }
   return (
-    <Card style={{ width: '18rem' }}>
+    <Card style={{ width: '18rem',height:'350px'}}>
+      <div style={{width: '18rem',overflow:"hidden",height:'150px'}}>
       <Card.Img variant="top" src={product.src} />
+      </div>
+      
       <Card.Body>
         <Card.Title>{product.name}</Card.Title>
         <Card.Text>

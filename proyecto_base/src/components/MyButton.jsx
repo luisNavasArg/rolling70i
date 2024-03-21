@@ -30,7 +30,7 @@ const MyButton = () => {
             theme:"light",
             colorText:"dark",
             admin:user.admin})
-          console.log(user.theme);
+          
         }
     }
   return (

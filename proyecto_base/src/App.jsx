@@ -46,13 +46,13 @@ function App() {
       <BrowserRouter>
     <NavbarApp admin={user.admin}/>
     <Routes>
-        <Route  path='/' element={<Products products={products}/>}/>
+        <Route  path='/' element={<Products products={products} setProducts={setProducts}/>}/>
        <Route path='/admin' element={<RoutesPrivates />}> 
             <Route path='/admin' element={<Admin/>}/>
-            <Route path='/admin/agregarProducto' element={<AddProduct/>}/>
-            <Route path='/admin/productos' element={<Products products={products}/>}/>
-            <Route path='/admin/detalleProducto/:id' element={<DetailProduct/>}/>
-            <Route path='/admin/modificarProducto/:id' element={<UpdateProduct/>}/>
+            <Route path='/admin/agregarProducto' element={<AddProduct setProducts={setProducts}/>}/>
+            <Route path='/admin/productos' element={<Products products={products} setProducts={setProducts}/>}/>
+            <Route path='/admin/detalleProducto/:id' element={<DetailProduct />}/>
+            <Route path='/admin/modificarProducto/:id' element={<UpdateProduct setProducts={setProducts}/>}/>
         </Route> 
         <Route path='/nosotros' element={<About/>}/>
         {/* Enviar una función como props */}
